@@ -117,19 +117,19 @@ export async function handler(chatUpdate) {
         if (!('antiLink' in chat)) chat.antiLink = false
         if (!('antiSticker' in chat)) chat.antiSticker = true
         if (!('antiToxic' in chat)) chat.antiToxic = false
-        if (!('detect' in chat)) chat.detect = false
+        if (!('detect' in chat)) chat.detect = true
         if (!('getmsg' in chat)) chat.getmsg = true
         if (!('isBanned' in chat)) chat.isBanned = false
         if (!('nsfw' in chat)) chat.nsfw = true
         if (!('sBye' in chat)) chat.sBye = ''
         if (!('sDemote' in chat)) chat.sDemote = ''
-        if (!('simi' in chat)) chat.simi = false
+        if (!('simi' in chat)) chat.simi = true
         if (!('sPromote' in chat)) chat.sPromote = ''
         if (!('sWelcome' in chat)) chat.sWelcome = ''
         if (!('useDocument' in chat)) chat.useDocument = true
         if (!('viewOnce' in chat)) chat.viewOnce = true
         if (!('viewStory' in chat)) chat.viewStory = true
-        if (!('welcome' in chat)) chat.welcome = false
+        if (!('welcome' in chat)) chat.welcome = true
         if (!('chatbot' in chat)) chat.chatbot = true
         if (!isNumber(chat.expired)) chat.expired = 0
       } else
@@ -138,22 +138,22 @@ export async function handler(chatUpdate) {
           antiLink: false,
           antiSticker: true,
           antiToxic: false,
-          detect: false,
+          detect: true,
           expired: 0,
           getmsg: true,
           isBanned: false,
           nsfw: true,
           sBye: '',
           sDemote: '',
-          simi: false,
+          simi: true,
           sPromote: '',
-          sticker: false,
+          sticker: true,
           sWelcome: '',
           useDocument: true,
           viewOnce: true,
           viewStory: true,
-          welcome: false,
-          chatbot: false,
+          welcome: true,
+          chatbot: true,
         }
 
       let settings = global.db.data.settings[this.user.jid]
@@ -786,7 +786,8 @@ export async function deleteUpdate(message) {
             ≡ deleted a message 
             ┌─⊷  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 
             ▢ *Number :* @${participant.split`@`[0]} 
-            └──────silva───────
+            └─────────────
+            ▢ silva
             `.trim(),
       msg,
       {
@@ -833,7 +834,7 @@ export async function presenceUpdate(presenceUpdate) {
   const status = presenceUpdate.presences[nouser]?.lastKnownPresence
   const user = global.db.data.users[nouser[0]]
 
-  if (user?.afk && status === 'composing' && user.afk > -1) {
+  if (user?.afk && status === 'recording' && user.afk > -1) {
     if (user.banned) {
       user.afk = -1
       user.afkReason = 'User Banned Afk'
