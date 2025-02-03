@@ -65,8 +65,8 @@ export async function handler(chatUpdate) {
           if (!isNumber(user.regTime)) user.regTime = -1
         }
         //--user number
-        if (!isNumber(user.afk)) user.afk = -1
-        if (!('afkReason' in user)) user.afkReason = 'away from keyboard'
+        if (!isNumber(user.afk)) user.afk = 1
+        if (!('afkReason' in user)) user.afkReason = 'silva is not available now thank you'
         if (!('banned' in user)) user.banned = false
         if (!isNumber(user.warn)) user.warn = 0
         if (!isNumber(user.level)) user.level = 0
