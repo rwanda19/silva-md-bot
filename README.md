@@ -111,3 +111,11 @@ Boost your bot with external features!
 Licensed under MIT.  
 © [Silva Tech Inc](https://github.com/SilvaTechB)
 
+
+
+
+
+ <p align="left">
+<a href="https://PRINCE-MD-409f95bea707.herokuapp.com"><img src="https://img.shields.io/badge/Pair%20session%2002-white" alt="𝐏𝐚𝐢𝐫 𝐬𝐞𝐬𝐬𝐢𝐨𝐧 02" width="300"></a>
+
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
